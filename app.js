@@ -21,8 +21,10 @@ const game = {
     ],
 }
 
-console.dir(pokemon, { maxArrayLength: null })
+// console.dir(pokemon, { maxArrayLength: null })
 
 // Exercise 1: Find the Pokémon with number 59
 const pokemon59 = pokemon.find(p => p.number === 59);
 console.log("Pokemon #59 is:", pokemon59.name);
+
+console.log(game)
