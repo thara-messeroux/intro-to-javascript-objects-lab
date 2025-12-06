@@ -110,61 +110,15 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 
-// Find its evolved version in the big Pokémon list
-const evolvedBulbasaurtoIvysaur = pokemon.find(p => p.number === 2);
-const evolvedIvysaurToVenusaur = pokemon.find(p => p.number === 3);
-const evolvedVenusaurToCharmander = pokemon.find(p => p.number === 4);
-const evolvedCharmanderToCharmeleon = pokemon.find(p => p.number === 5);
+// Find the starter Pokémon in the party
+const starterIndex = game.party.findIndex(pokemon => pokemon.starter === true);
+const starterPokemon = game.party[starterIndex];
 
-console.log(evolvedBulbasaurtoIvysaur)
-console.log(evolvedIvysaurToVenusaur)
-console.log(evolvedVenusaurToCharmander)
-console.log(evolvedCharmanderToCharmeleon)
+// Find its evolved form in the main Pokémon list
+// Using number + 1 because of the mapping given in the hints
+const evolvedStarterPokemon = pokemon.find(p => p.number === starterPokemon.number + 1);
 
-// Find the index
-const indexOfstarterPokemonBulbasaur = game.party.indexOf(starterPokemonBulbasaur);
-const indexOfevolvedBulbasaurtoIvysaur = game.party.indexOf(evolvedBulbasaurtoIvysaur);
-const indexOfevolvedIvysaurToVenusaur = game.party.indexOf(evolvedIvysaurToVenusaur);
-const indexOfevolvedVenusaurToCharmander = game.party.indexOf(evolvedVenusaurToCharmander);
+// Replace the starter in the party with its evolution
+game.party.splice(starterIndex, 1, evolvedStarterPokemon);
 
-console.log('index:', indexOfstarterPokemonBulbasaur)
-console.log('index:', indexOfevolvedBulbasaurtoIvysaur)
-console.log('index:', indexOfevolvedIvysaurToVenusaur)
-console.log('index:', indexOfevolvedVenusaurToCharmander)
-
-// Replace the old Pokémon with the new one
-game.party.splice(indexOfstarterPokemonBulbasaur, 1, evolvedBulbasaurtoIvysaur);
-game.party.splice(indexOfevolvedBulbasaurtoIvysaur, 1, evolvedIvysaurToVenusaur);
-game.party.splice(indexOfevolvedIvysaurToVenusaur, 1, evolvedVenusaurToCharmander);
-game.party.splice(indexOfevolvedVenusaurToCharmander, 1, evolvedCharmanderToCharmeleon);
-
-console.log('Exercise 7 results, new party:', game.party);
-
-/*
-
-Exercise 7 results, new party: [
-    { number: 2, name: 'Ivysaur', type: 'grass', hp: 60, starter: false },
-    {
-        number: 3,
-        name: 'Venusaur',
-        type: 'grass',
-        hp: 80,
-        starter: false
-    },
-    {
-        number: 4,
-        name: 'Charmander',
-        type: 'fire',
-        hp: 39,
-        starter: true
-    },
-    {
-        number: 5,
-        name: 'Charmeleon',
-        type: 'fire',
-        hp: 58,
-        starter: false
-    }
-]
-
-*/
+console.log("Exercise 7 results, new party:", game.party);
