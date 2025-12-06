@@ -92,7 +92,6 @@ for (const gym of game.gyms) {
 
 console.log("Exercise 6 results:", game.gyms);
 
-
 /*
 Exercise 7
 1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
@@ -122,3 +121,41 @@ const evolvedStarterPokemon = pokemon.find(p => p.number === starterPokemon.numb
 game.party.splice(starterIndex, 1, evolvedStarterPokemon);
 
 console.log("Exercise 7 results, new party:", game.party);
+
+/*
+Exercise 8
+1. Print the name of each Pokémon in your party.
+2. Consider using a loop or an array method to access each Pokémon's name.
+
+Solve Exercise 8 here:
+*/
+console.log('Exercise 8 results, partyPokemons name:');
+
+for (const pokemon of game.party) {
+    console.log(pokemon.name)
+}
+
+/*
+Exercise 9
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
+
+
+Solve Exercise 9 here:
+*/
+console.log('Exercise 9 results, starterPokemons names:');
+
+const starterPokemons = pokemon.filter(pokemon => pokemon.starter === true);
+
+for (const pokemon of starterPokemons) {
+    console.log(pokemon.name)
+}
+
+
+/*
+Exercise 9 results, starterPokemons names:
+Bulbasaur
+Charmander
+Squirtle
+Pikachu
+*/
