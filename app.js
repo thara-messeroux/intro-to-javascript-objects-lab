@@ -21,6 +21,7 @@ const game = {
     ],
 }
 
+
 // console.dir(pokemon, { maxArrayLength: null })
 
 // Exercise 1: Find the Pokémon with number 59
@@ -72,3 +73,33 @@ const pokemonPick3 = pokemon.find(p => p.name == 'Venusaur');
 game.party.push(pokemonPick1, pokemonPick2, pokemonPick3);
 
 console.log(game);
+
+
+/*
+Exercise 6
+1. Set the `completed` property to true for gyms with a difficulty below 3.
+2. Think about how you'd loop through the `gyms` array to check and update the `completed` property.
+
+
+Solve Exercise 6 here:
+*/
+
+for (const gym of game.gyms) {
+    if (gym.difficulty < 3) {
+        gym.completed = true;
+    }
+}
+
+console.log("Exercise 6 results:", game.gyms);
+
+
+// Exercise 6 results: [
+//     { location: 'Pewter City', completed: true, difficulty: 1 },
+//     { location: 'Cerulean City', completed: true, difficulty: 2 },
+//     { location: 'Vermilion City', completed: false, difficulty: 3 },
+//     { location: 'Celadon City', completed: false, difficulty: 4 },
+//     { location: 'Fuchsia City', completed: false, difficulty: 5 },
+//     { location: 'Saffron City', completed: false, difficulty: 6 },
+//     { location: 'Cinnabar Island', completed: false, difficulty: 7 },
+//     { location: 'Viridian City', completed: false, difficulty: 8 }
+// ]
