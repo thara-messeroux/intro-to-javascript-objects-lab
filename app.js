@@ -136,6 +136,14 @@ for (const pokemon of game.party) {
 }
 
 /*
+Exercise 8 results, partyPokemons name:
+Ivysaur
+Ivysaur
+Venusaur
+Charmander
+*/
+
+/*
 Exercise 9
 1. Can you print out all the starter Pokémon from the `pokemon` array?
 2. Think about how you can identify a starter Pokémon and then log their names.
@@ -159,3 +167,31 @@ Charmander
 Squirtle
 Pikachu
 */
+
+/*
+Exercise 10
+Create a method called `catchPokemon` and add it to the `game` object. You should not need to edit the original game object directly. This method should:
+  - Accept an object as a parameter called `pokemonObj`
+  - Add the `pokemonObj` to the `game.party` array.
+  - not return anything
+
+After writing this method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+
+Solve Exercise 10 here:
+*/
+
+/*
+Exercise 10
+*/
+
+game.catchPokemon = function (pokemonObj) {
+    game.party.push(pokemonObj);
+};
+
+// choose a Pokémon from the main pokemon array
+const pikachu = pokemon.find(p => p.number === 25);
+
+// call the method
+game.catchPokemon(pikachu);
+
+console.log("Exercise 10 results:", game.party);
