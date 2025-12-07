@@ -21,7 +21,6 @@ const game = {
     ],
 }
 
-
 // console.dir(pokemon, { maxArrayLength: null })
 
 // Exercise 1: Find the Pokémon with number 59
@@ -143,6 +142,7 @@ Venusaur
 Charmander
 */
 
+
 /*
 Exercise 9
 1. Can you print out all the starter Pokémon from the `pokemon` array?
@@ -158,7 +158,6 @@ const starterPokemons = pokemon.filter(pokemon => pokemon.starter === true);
 for (const pokemon of starterPokemons) {
     console.log(pokemon.name)
 }
-
 
 /*
 Exercise 9 results, starterPokemons names:
@@ -196,7 +195,6 @@ game.catchPokemon(pikachu);
 
 console.log("Exercise 10 results:", game.party);
 
-
 /*
 Exercise 11
 1. Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify it so that it also decreases the number of pokeballs in your inventory each time you catch a Pokémon.
@@ -233,3 +231,34 @@ game.catchPokemon(charmeleon);
 // Testing: log party and items to verify behavior
 console.log("Exercise 11 results – party:", game.party);
 console.log("Exercise 11 results – items:", game.items);
+
+
+/*
+Exercise 12
+1. Similar to Exercise 6, now complete gyms with a difficulty below 6. How will you approach this?
+ (change the value of `complete` in the qualifying objects from false to true).
+
+Solve Exercise 12 here:
+*/
+
+
+for (const gym of game.gyms) {
+    if (gym.difficulty < 6) {
+        gym.completed = true;
+    }
+}
+
+console.log("Exercise 12 results:", game.gyms);
+
+/*
+Exercise 12 results: [
+    { location: 'Pewter City', completed: true, difficulty: 1 },
+    { location: 'Cerulean City', completed: true, difficulty: 2 },
+    { location: 'Vermilion City', completed: true, difficulty: 3 },
+    { location: 'Celadon City', completed: true, difficulty: 4 },
+    { location: 'Fuchsia City', completed: true, difficulty: 5 },
+    { location: 'Saffron City', completed: false, difficulty: 6 },
+    { location: 'Cinnabar Island', completed: false, difficulty: 7 },
+    { location: 'Viridian City', completed: false, difficulty: 8 }
+]
+*/
