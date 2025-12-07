@@ -67,11 +67,11 @@ Exercise 5
 Solve Exercise 5 here:
 */
 
-const ivysaur = pokemon.find(p => p.name == 'Ivysaur');
-const venusaur = pokemon.find(p => p.name == 'Venusaur');
-const charmander = pokemon.find(p => p.name == 'Charmander');
+const ivysaur_pick1 = pokemon.find(p => p.name == 'Ivysaur');
+const venusaur_pick2 = pokemon.find(p => p.name == 'Venusaur');
+const charmander_pick3 = pokemon.find(p => p.name == 'Charmander');
 
-game.party.push(ivysaur, venusaur, charmander);
+game.party.push(ivysaur_pick1, venusaur_pick2, charmander_pick3);
 
 console.log('Exercise 5 results:', game);
 
@@ -195,3 +195,41 @@ const pikachu = pokemon.find(p => p.number === 25);
 game.catchPokemon(pikachu);
 
 console.log("Exercise 10 results:", game.party);
+
+
+/*
+Exercise 11
+1. Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify it so that it also decreases the number of pokeballs in your inventory each time you catch a Pokémon.
+2. How will you find and update the quantity of pokeballs in the `game.items` array?
+
+Tips:
+For this exercise, it's okay to have a negative number of pokeballs.
+After updating the method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
+
+Solve Exercise 11 here:
+*/
+
+game.catchPokemon = function (pokemonObj) {
+    // Add the caught Pokémon to the party
+    game.party.push(pokemonObj);
+
+    // Loop through the items array to find the pokeball entry
+    for (const item of game.items) {
+        // When we find the pokeball object, decrease its quantity by 1
+        if (item.name === "pokeball") {
+            item.quantity = item.quantity - 1;
+            // We could break here since we found it, but it's not required
+        }
+    }
+};
+
+// Pick a Pokémon from the main pokemon data (Charmeleon, #4)
+const charmeleon = pokemon.find(p => p.number === 5);
+
+// Catch Charmeleon using our method
+game.catchPokemon(charmeleon);
+
+// Testing: log party and items to verify behavior
+console.log("Exercise 11 results – party:", game.party);
+console.log("Exercise 11 results – items:", game.items);
