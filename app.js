@@ -262,3 +262,65 @@ Exercise 12 results: [
     { location: 'Viridian City', completed: false, difficulty: 8 }
 ]
 */
+
+
+/*
+Exercise 13
+1. Create a `gymStatus` method in `game` to tally completed and incomplete gyms.
+2. How will you iterate through the `gyms` array and update the tally? Remember to log the final tally.
+
+This method should:
+  - Not accept any arguments.
+  - Initially create a constant `gymTally`, which is an object that has two 
+    properties: `completed` and `incomplete`, both of which are initially set to 0.
+  - Iterate through the objects in the `game.gyms` array and update the 
+    properties on `gymTally` as follows: 
+    - `completed` should count how many gyms in the array have a value of `true` 
+      for their `completed` property. 
+    - `incomplete` should count how many gyms in the array have a value of 
+      `false` for their `completed` property.
+  - Log the value of `gymTally`.
+  - The method should not return anything.
+
+For example, if five gym objects have a value of `true` on their `completed` property and three gym objects have a value of `false` on their `completed` property, the logged value would be: `{ completed: 5, incomplete: 3 }`.
+
+Solve Exercise 13 here:
+*/
+
+
+/*
+Exercise 13
+1. Create a `gymStatus` method in `game` to tally completed and incomplete gyms.
+2. How will you iterate through the `gyms` array and update the tally? Remember to log the final tally.
+*/
+
+// Add a new method called gymStatus to the game object
+game.gymStatus = function () {
+    // Start a tally object with both counts set to 0
+    const gymTally = {
+        completed: 0,
+        incomplete: 0
+    };
+
+    // Loop through each gym in the game.gyms array
+    for (const gym of game.gyms) {
+        // If the gym is completed, increase the completed count
+        if (gym.completed === true) {
+            gymTally.completed = gymTally.completed + 1;
+        } else {
+            // Otherwise, increase the incomplete count
+            gymTally.incomplete = gymTally.incomplete + 1;
+        }
+    }
+
+    // Log the final tally
+    console.log("Exercise 13 results – gymTally:", gymTally);
+    // The method does NOT return anything (no 'return' needed)
+};
+
+// Call the method to see the tally in the console
+game.gymStatus();
+
+/*
+Exercise 13 results – gymTally: { completed: 5, incomplete: 3 }
+*/
