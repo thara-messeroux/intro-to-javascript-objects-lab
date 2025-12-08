@@ -343,5 +343,38 @@ game.partyCount = function () {
 // Test: call the method and log the result
 console.log("Exercise 14 results – party count:", game.partyCount());
 
-
 // Exercise 14 results – party count: 6
+
+
+/*
+Exercise 15
+1. Now, complete gyms with a difficulty below 8. Reflect on how this is similar to or different from the previous gym exercises.
+(change the value of `complete` in the qualifying objects from false to true).
+
+Solve Exercise 15 here:
+*/
+
+
+// Loop through all gyms in the game.gyms array
+for (const gym of game.gyms) {
+    // If the gym's difficulty is less than 8, mark it as completed
+    if (gym.difficulty < 8) {
+        gym.completed = true;
+    }
+}
+
+// Log the results to verify that the correct gyms are now completed
+console.log("Exercise 15 results:", game.gyms);
+
+/*
+Exercise 15 results: [
+  { location: 'Pewter City',    completed: true, difficulty: 1 },
+  { location: 'Cerulean City',  completed: true, difficulty: 2 },
+  { location: 'Vermilion City', completed: true, difficulty: 3 },
+  { location: 'Celadon City',   completed: true, difficulty: 4 },
+  { location: 'Fuchsia City',   completed: true, difficulty: 5 },
+  { location: 'Saffron City',   completed: true, difficulty: 6 }, // now true
+  { location: 'Cinnabar Island',completed: true, difficulty: 7 }, // now true
+  { location: 'Viridian City',  completed: false, difficulty: 8 } // still false
+]
+*/
