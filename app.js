@@ -324,3 +324,24 @@ game.gymStatus();
 /*
 Exercise 13 results – gymTally: { completed: 5, incomplete: 3 }
 */
+
+
+/*
+Exercise 14
+Add a `partyCount` method to `game` that counts the number of Pokémon in your party.
+*/
+
+// Add the method to the game object
+game.partyCount = function () {
+    // Count how many Pokémon are in the party
+    const count = game.party.length;
+
+    // Return that number (NOT console.log)
+    return count;
+};
+
+// Test: call the method and log the result
+console.log("Exercise 14 results – party count:", game.partyCount());
+
+
+// Exercise 14 results – party count: 6
